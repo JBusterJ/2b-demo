@@ -112,7 +112,7 @@ function validate() {
         password.focus();
         return false;
     }
-    if (username.value == "" || password.value == "" || confirmPassword.value == "" || email.value == "") {
+    if (username == "" || password == "" || confirmPassword == "" || email == "") {
         return false;
     }
     if (confirmPassword.value.length < 8) {
@@ -183,6 +183,7 @@ function createAccount() {
                 console.log("Account created:", docRef.id);
             });
             cont = true;
+            login(false, uname, email, pwd);
             document.getElementById("signupdiv").style.visibility = 'hidden';
         } else if (validate() == undefined || validate() == false) {
             console.log("Account will not be created.");
@@ -215,6 +216,7 @@ function login(doDbStuff, uname, email, pwd) {
                 })
             }
             document.getElementById("signindiv").style.visibility = 'hidden';
+            document.getElementById("signoutbutton").style.visibility = 'visible';
             document.getElementById("signupdiv").style.visibility = 'hidden';
         }
         console.log(querySnapshot);
@@ -243,6 +245,8 @@ function checkForLogin() {
 
 function signOut() {
     localStorage.removeItem(window.btoa("sessionData"));
+    // refresh page
+    window.location.reload();
 }
 
 checkForLogin();
