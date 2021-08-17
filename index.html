@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andromeda 2B</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body onload="index = 0; swapContent(index); changeActive()">
+    <div style="position: absolute; backdrop-filter: blur(10px); width: 100%; height: 100%; z-index: -1;"></div>
+    <figure class="test col-xs-6">
+        <img src="" alt="" id="blah" class="pfpTR" style="border-radius: 50%; height: 75px; width: 75px;"
+            onerror="this.style.display='none'">
+        <figcaption style="border-radius: 50%; height: 75px; width: 75px;">
+            <h1 style="z-index: -1; position: absolute; opacity: 0.1;" id="usernameHolder"
+                onmouseover="document.getElementById('blah').style.filter= 'blur(1px)'"
+                onmouseout="document.getElementById('blah').style.filter= 'blur(0px)'">Space</h1>
+            </figcation>
+    </figure>
+
+    <div style="font-size: 55px;">
+        <i class="bi bi-person-fill fa-10x" id="notLoggedIn"></i>
+    </div>
+    <div style="font-size: 15px;">
+        <i class="bi bi-box-arrow-right" id="signout"></i>
+    </div>
+
+    <main class="container" style="">
+        <aside class="channels">
+            <header class="channels-header focusable">
+                <img src="https://cdn.discordapp.com/banners/851090439372013569/a2dc19ba4766a218045cbe0d7ae4094e.jpg?size=512"
+                    style="display: block; width: 230px; height: auto; position: absolute; z-index: 1; filter: blur(1px); left: 5px; margin: none;">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3 role="header" class="channels-header-name" style="z-index: 2">Andromeda 2B</h3>
+                <svg role="button" aria-label="Dropdown" class="channels-header-dropdown">
+                    <use xlink:href="#icon-dropdown" style="z-index: 2" />
+                </svg>
+            </header>
+
+            <section class="channels-list">
+                <header class="channels-list-header focusable">
+                    <h5>Text Channels</h5>
+                </header>
+
+                <ul class="channels-list-text">
+                    <li class="channel focusable channel-text active" onclick="swapContent(0)">
+                        <span class="channel-name">home</span>
+                        <button class="button" role="button" aria-label="Invite"><svg>
+                                <use xlink:href="#icon-invite" />
+                            </svg></button>
+                        <button class="button" role="button" aria-label="settings"><svg>
+                                <use xlink:href="#icon-channel-settings" />
+                            </svg></button>
+                    </li>
+
+                    <li class="channel focusable channel-text" onclick="swapContent(1)">
+                        <span class="channel-name">picture-gallery</span>
+                        <button class="button" role="button" aria-label="Invite"><svg>
+                                <use xlink:href="#icon-invite" />
+                            </svg></button>
+                        <button class="button" role="button" aria-label="settings"><svg>
+                                <use xlink:href="#icon-channel-settings" />
+                            </svg></button>
+                    </li>
+                    <li class="channel focusable channel-text" onclick="swapContent(2)">
+                        <span class="channel-name">about</span>
+                        <button class="button" role="button" aria-label="Invite"><svg>
+                                <use xlink:href="#icon-invite" />
+                            </svg></button>
+                        <button class="button" role="button" aria-label="settings"><svg>
+                                <use xlink:href="#icon-channel-settings" />
+                            </svg></button>
+                    </li>
+                    <li class="channel focusable channel-text" onclick="swapContent(3)">
+                        <span class="channel-name">updates</span>
+                        <button class="button" role="button" aria-label="Invite"><svg>
+                                <use xlink:href="#icon-invite" />
+                            </svg></button>
+                        <button class="button" role="button" aria-label="settings"><svg>
+                                <use xlink:href="#icon-channel-settings" />
+                            </svg></button>
+                    </li>
+                    <li class="channel focusable channel-text" onclick="swapContent(5)">
+                        <span class="channel-name">other-links</span>
+                        <button class="button" role="button" aria-label="Invite"><svg>
+                                <use xlink:href="#icon-invite" />
+                            </svg></button>
+                        <button class="button" role="button" aria-label="settings"><svg>
+                                <use xlink:href="#icon-channel-settings" />
+                            </svg></button>
+                    </li>
+                    <li class="channel focusable channel-text" onclick="swapContent(4)">
+                        <span class="channel-name">account-(experimental)</span>
+                        <button class="button" role="button" aria-label="Invite"><svg>
+                                <use xlink:href="#icon-invite" />
+                            </svg></button>
+                        <button class="button" role="button" aria-label="settings"><svg>
+                                <use xlink:href="#icon-channel-settings" />
+                            </svg></button>
+                    </li>
+                </ul>
+
+                <header class="channels-list-header focusable">
+                    <h5>Voice Channels</h5>
+                </header>
+            </section>
+
+        </aside>
+
+        <div class="vert-container">
+            <menu type="toolbar" class="menu">
+                <h2 class="menu-name">home</h2>
+            </menu>
+            <img src="https://cdn.discordapp.com/avatars/851088243566313473/a_22ecf7693e2ff969649e20dcfe7e755f.gif?size=256"
+                alt="Aaryaman"
+                style="width: 50px; height: 50px; position: absolute; border-radius: 50%; margin-left: 10px; margin-top: 85px;">
+            <p class="uname">Aaryaman</p><span class="time">June 6, 2021 11:29 PM</span>
+            <section class="chat" style="padding-left: 40px; padding-top: 55px;">
+                <div id="info0" style="display:none">
+                    <div class="blog-post" id="posts-collection" style="margin-left: 30px;"></div>
+                    <h2 style="margin-left: 30px;">░▒▓█ Bonus Space! █▓▒░</h2>
+                    <p style="margin-left: 30px; font-weight: 100; font-size: 15px;">
+                        <br>
+                        Did you know that The Andromeda–Milky Way collision is a galactic collision predicted to
+                        occur
+                        in about
+                        4.5 billion years between the two largest galaxies in the Local Group—the Milky Way (which
+                        contains the
+                        Solar System and Earth) and the Andromeda Galaxy? The stars involved are sufficiently far
+                        apart
+                        that it is improbable that any of them will individually collide.
+                        Some stars will be ejected from the resulting galaxy, nicknamed Milkomeda or Milkdromeda.
+                        Based on data from the Hubble Space Telescope, the Milky Way Galaxy
+                        (pictured right-centre) and Andromeda Galaxy (left-centre) are predicted
+                        to distort each other with tidal pull in 3.75 billion years, as shown in this illustration.
+                        <br>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Andromeda_Collides_Milky_Way.jpg/450px-Andromeda_Collides_Milky_Way.jpg"
+                            style="display: block; margin-top: 20px">
+                    <p style="font-weight: 100; font-size: 11px; margin-left: 32px;">"This illustration shows a
+                        stage in
+                        the predicted merger between our Milky Way galaxy and the neighboring Andromeda galaxy, as
+                        it
+                        will unfold over the next several billion years. In this image, representing Earth's night
+                        sky
+                        in 3.75 billion years, Andromeda (left) fills the field of view and begins to distort the
+                        Milky
+                        Way with tidal pull.
+                        <b>Credits: NASA; ESA; Z. Levay and R. van der Marel, STScI; T. Hallas; and A.
+                            Mellinger</b>" -
+                        <a href="https://www.nasa.gov/mission_pages/hubble/science/milky-way-collide.html"
+                            style="color: #5560E9; text-decoration: none; font-weight: bold;" class="link-imp">NASA</a>
+                    </p>
+                    </p>
+                </div>
+
+
+                <div id="info1" style="display:block">
+                    <h2 style="margin-left: 30px;">░▒▓█ Picture Gallery! █▓▒░</h2>
+                    <p style="margin-left: 30px; font-weight: 100; font-size: 15px;">
+
+                        <br>
+                        Did you know that The Andromeda–Milky Way collision is a galactic collision predicted to
+                        occur
+                        in about
+                        4.5 billion years between the two largest galaxies in the Local Group—the Milky Way (which
+                        contains the
+                        Solar System and Earth) and the Andromeda Galaxy? The stars involved are sufficiently far
+                        apart
+                        that it is improbable that any of them will individually collide.
+                        Some stars will be ejected from the resulting galaxy, nicknamed Milkomeda or Milkdromeda.
+                        Based on data from the Hubble Space Telescope, the Milky Way Galaxy
+                        (pictured right-centre) and Andromeda Galaxy (left-centre) are predicted
+                        to distort each other with tidal pull in 3.75 billion years, as shown in this illustration.
+                        <br>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Andromeda_Collides_Milky_Way.jpg/450px-Andromeda_Collides_Milky_Way.jpg"
+                            style="display: block; margin-top: 20px">
+                    <p style="font-weight: 100; font-size: 11px; margin-left: 32px;">"This illustration shows a
+                        stage in
+                        the predicted merger between our Milky Way galaxy and the neighboring Andromeda galaxy, as
+                        it
+                        will unfold over the next several billion years. In this image, representing Earth's night
+                        sky
+                        in 3.75 billion years, Andromeda (left) fills the field of view and begins to distort the
+                        Milky
+                        Way with tidal pull.
+                        <b>Credits: NASA; ESA; Z. Levay and R. van der Marel, STScI; T. Hallas; and A.
+                            Mellinger</b>" -
+                        <a href="https://www.nasa.gov/mission_pages/hubble/science/milky-way-collide.html"
+                            style="color: #5560E9; text-decoration: none; font-weight: bold;" class="link-imp">NASA</a>
+                    </p>
+                    </p>
+                </div>
+
+
+
+                <div id="info2" style="display:none">
+                    <h2 style="margin-left: 30px;">░▒▓█ About! █▓▒░</h2>
+                    <div style="margin-left: 30px; font-weight: 100; font-size: 15px;">
+                        🚀Hello there Martians!🚀 <br><br>
+
+                        Like Space, Astronomy &amp; <br>
+                        Technology? So Andromeda 2B is<br>
+                        the best place for you! <br>
+                        There are many spacey channels in <br>
+                        our server!<br>
+
+                        What do we have? <br>
+                        📍Lots of members <br>
+                        📍We have our own website! <br>
+                        📍24/7 Space Stage Channel! <br>
+                        📍Accepting Suggestions!<br>
+                        📍Trivia!<br>
+                        📍Space Discussions <br>
+                        📍Loads of helpful Space channels! <br>
+                        📍Space updates and news <br>
+                        📍Spacey bots! <br>
+                        📍Nitro Giveaways <br>
+                        📍Play with Bots <br>
+                        📍24/7 Music Stage Channel! <br><br>
+
+                        Cool right? <br>
+                        Join our Discord Server to know more! <br>
+                        <a href="https://discord.gg/XYP26KGskD"
+                            style="color: #5560E9; text-decoration: none; font-weight: bold;"
+                            class="link-imp">https://discord.gg/XYP26KGskD"</a> <br>
+                        <iframe src="https://giphy.com/embed/zOpCjfo01YIM0" width="480" height="296" frameborder="0"
+                            class="giphy-embed" allowfullscreen=""></iframe><br>
+                        <iframe src="https://giphy.com/embed/qtFXyiix7q6OmGQ3sP" width="480" height="360"
+                            frameborder="0" class="giphy-embed img2" allowfullscreen=""></iframe><br>
+                    </div>
+                </div>
+
+
+
+                <div id="info3" style="display:none">
+                    <h2 style="margin-left: 30px;">░▒▓█ Updates! █▓▒░</h2>
+                    <table class="width: 100%">
+                        <tr>
+                            <th>Version</th>
+                            <th>Feature(s)</th>
+                            <th>Release Date</th>
+                        </tr>
+                        <tr>
+                            <td>1.2</td>
+                            <td>New UI, Minor Bug fixes, New content</td>
+                            <td>14/08/2021 @ 1:06 PM</td>
+                            <!-- (indev 1:06PM 13/08/2021-14/08/2021) -->
+                        </tr>
+                        <tr>
+                            <td>1.2.1</td>
+                            <td>New UI, Minor Bug fixes</td>
+                            <td>14/08/2021 @ 1:06 PM</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="info4" style="display:none">
+                    <h2 style="margin-left: 30px;">░▒▓█ Account █▓▒░</h2>
+                    <div style="margin-left: 30px;">
+                        <div class="sign-up" id="signupdiv">
+                            <input type="text" placeholder="Choose a cool Username." id="uname" required><br>
+                            <input type="text" placeholder="Tell us your email. We won't share it." id="email"
+                                required><br>
+                            <input type="password" placeholder="Choose a secure password." id="pwd" required><br>
+                            <input type="password" placeholder="Confirm your password." id="confPwd" required><br>
+                            <button onclick="createAccount()">Submit</button>
+                            <input type="file" id="avatar" onchange="getDataUrl(this);" required>
+                        </div>
+                        <div class="sign-up" id="signindiv">
+                            <input type="text" placeholder="What's your username." id="uname1"><br>
+                            <input type="text" placeholder="Tell us your email." id="email1"><br>
+                            <input type="password" placeholder="What's your password." id="pwd1"><br>
+                            <button
+                                onclick='login(true, document.getElementById("uname1").value, document.getElementById("email1").value, document.getElementById("pwd1").value)'>Login</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="info5" style="display:none">
+                    <h2 style="margin-left: 30px;">░▒▓█ Other Links! █▓▒░</h2>
+                    <table class="width: 100%">
+                        <tr>
+                            <th>Organisation</th>
+                            <th>Link</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Isro</td>
+                            <td><a href="https://www.isro.gov.in/">https://www.isro.gov.in/</a></td>
+                            <td>Official Isro website</td>
+                            <!-- (indev 1:06PM 13/08/2021-14/08/2021) -->
+                        </tr>
+                        <tr>
+                            <td>NASA</td>
+                            <td><a href="https://nasa.gov">https://nasa.gov</a></td>
+                            <td>Official NASA website</td>
+                        </tr>
+                        <tr>
+                            <td>SpaceX</td>
+                            <td><a href="https://www.spacex.com/">https://www.spacex.com/</a></td>
+                            <td>Official SpaceX website</td>
+                        </tr>
+                        <tr>
+                            <td>Watch Your Space</td>
+                            <td><a
+                                    href="https://jbusterj.github.io/Watch-Your-Space/#">https://jbusterj.github.io/Watch-Your-Space/#</a>
+                            </td>
+                            <td>Built by the smartest developer ever :D (JBuster#3191)</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <!-- ICONS -->
+    <svg id="icon-friends" viewBox="-289 382 32 27.1">
+        <style id="style3">
+            .st0 {
+                fill: #FFFFFF;
+            }
+
+            .st1 {
+                opacity: 0.6;
+            }
+        </style>
+        <g id="g4145" fill="#fff">
+            <path id="path5"
+                d="M-273 409.1c-4.1 0-6.8-.6-7.9-1.7-.5-.6-.6-1.1-.6-1.3 0-.7.1-2.9.6-3.8.1-.3.5-1 4.5-2.4-1.6-1.4-2.6-4-2.6-7.1 0-4.2 2.3-7 5.9-7.1h.1c3.6.1 5.9 2.8 5.9 7.1 0 3.1-1 5.7-2.6 7.1 4 1.4 4.4 2.1 4.5 2.4.4.9.5 3.1.6 3.8 0 .2 0 .7-.6 1.3-1.1 1.1-3.7 1.7-7.8 1.7zm0-2c5.1 0 6.2-.9 6.4-1.1-.1-1.1-.2-2.3-.3-2.7-.6-.4-2.9-1.3-4.8-1.9l-.7-.2-.1-2 .7-.3c1.7-.6 2.8-3.1 2.8-6.1 0-3.1-1.5-5-3.9-5.1-2.5 0-4 2-4 5.1 0 3 1.1 5.5 2.8 6.1l.7.3-.1 2-.7.2c-1.9.6-4.2 1.5-4.8 1.9-.1.4-.3 1.6-.3 2.7.1.2 1.3 1.1 6.3 1.1z"
+                class="st0" />
+            <g id="g7" class="st1" opacity=".6">
+                <path id="path9"
+                    d="M-257 402.4c0-.7-.1-2.9-.6-3.8-.1-.3-.5-1-4.5-2.4 1.6-1.4 2.6-4 2.6-7.1 0-4.2-2.3-7-5.9-7.1h-.1c-1.9 0-3.5.8-4.5 2.2.6.3 1.2.6 1.8 1 .7-.8 1.6-1.3 2.8-1.3 2.4 0 3.9 2 3.9 5.1 0 3-1.1 5.5-2.8 6.1l-.7.3.1 2 .7.2c1.9.6 4.3 1.5 4.8 1.9.1.4.3 1.6.3 2.7-.2.2-1 .8-3.8 1 .1.6.2 1.2.2 2 2.5-.2 4.2-.8 5-1.6.7-.5.7-1 .7-1.2z"
+                    class="st0" />
+                <path id="path11"
+                    d="M-287 402.3c.1-1.1.2-2.3.3-2.7.6-.4 2.9-1.3 4.8-1.9l.7-.2.1-2-.7-.3c-1.6-.6-2.8-3.1-2.8-6.1 0-3.1 1.5-5 4-5.1 1.2 0 2.1.5 2.8 1.3.5-.4 1.1-.8 1.8-1-1-1.4-2.6-2.2-4.5-2.2h-.1c-3.6 0-5.9 2.8-5.9 7.1 0 3.1 1 5.7 2.6 7.1-4 1.4-4.4 2.1-4.5 2.4-.4.9-.5 3.1-.6 3.8 0 .2 0 .7.6 1.3.8.9 2.5 1.4 5.1 1.6 0-.7.1-1.4.2-2-2.9-.3-3.7-.9-3.9-1.1z"
+                    class="st0" />
+            </g>
+        </g>
+    </svg>
+
+    <svg id="icon-mute" viewBox="0 0 16 16">
+        <path fill="#5D6063"
+            d="M12.5,8v1c0,2.2-1.8,4-4,4h-1c-2.2,0-4-1.8-4-4V8h-1v1 c0,2.8,2.2,5,5,5v1H7c-0.3,0-0.5,0.2-0.5,0.5C6.5,15.8,6.7,16,7,16h2c0.3,0,0.5-0.2,0.5-0.5C9.5,15.2,9.3,15,9,15H8.5v-1 c2.8,0,5-2.2,5-5V8H12.5z M8,12c1.9,0,3.5-1.6,3.5-3.5v-5C11.5,1.6,9.9,0,8,0C6.1,0,4.5,1.6,4.5,3.5v5C4.5,10.4,6.1,12,8,12z M5.5,3.5C5.5,2.1,6.6,1,8,1c1.4,0,2.5,1.1,2.5,2.5v5C10.5,9.9,9.4,11,8,11c-1.4,0-2.5-1.1-2.5-2.5V3.5z" />
+    </svg>
+
+    <svg id="icon-deafen" viewBox="0 0 16 16">
+        <path fill="#5D6063"
+            d="M15.9,9C16,8.7,16,8.3,16,8c0-4.4-3.6-8-8-8C3.6,0,0,3.6,0,8 c0,0.3,0,0.7,0.1,1h0C0,9.2,0,9.3,0,9.5v4C0,14.3,0.7,15,1.5,15h2C4.3,15,5,14.3,5,13.5v-4C5,8.7,4.3,8,3.5,8h-2 C1.3,8,1.2,8,1,8.1C1,8.1,1,8,1,8c0-3.9,3.1-7,7-7c3.9,0,7,3.1,7,7c0,0,0,0.1,0,0.1C14.8,8,14.7,8,14.5,8h-2C11.7,8,11,8.7,11,9.5 v4c0,0.8,0.7,1.5,1.5,1.5h2c0.8,0,1.5-0.7,1.5-1.5v-4C16,9.3,16,9.2,15.9,9L15.9,9z M1.5,9h2C3.8,9,4,9.2,4,9.5v4 C4,13.8,3.8,14,3.5,14h-2C1.2,14,1,13.8,1,13.5v-4C1,9.2,1.2,9,1.5,9z M15,13.5c0,0.3-0.2,0.5-0.5,0.5h-2c-0.3,0-0.5-0.2-0.5-0.5 v-4C12,9.2,12.2,9,12.5,9h2C14.8,9,15,9.2,15,9.5V13.5z" />
+    </svg>
+
+    <svg id="icon-settings" viewBox="0 0 16 16">
+        <path fill="#5D6063"
+            d="M8,5C6.3,5,5,6.3,5,8c0,1.7,1.3,3,3,3c1.7,0,3-1.3,3-3 C11,6.3,9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2c0-1.1,0.9-2,2-2s2,0.9,2,2C10,9.1,9.1,10,8,10z M16,8c0-1-0.8-1.9-1.8-2 c-0.1-0.3-0.3-0.7-0.4-1c0.7-0.8,0.6-1.9-0.1-2.7c-0.7-0.7-1.9-0.8-2.7-0.1c-0.3-0.2-0.6-0.3-1-0.4C9.9,0.8,9,0,8,0 C7,0,6.1,0.8,6,1.8C5.7,1.9,5.3,2.1,5,2.2C4.2,1.6,3.1,1.6,2.3,2.3C1.6,3.1,1.6,4.2,2.2,5C2.1,5.3,1.9,5.7,1.8,6C0.8,6.1,0,7,0,8 c0,1,0.8,1.9,1.8,2c0.1,0.3,0.3,0.7,0.4,1c-0.7,0.8-0.6,1.9,0.1,2.7c0.7,0.7,1.9,0.8,2.7,0.1c0.3,0.2,0.6,0.3,1,0.4 C6.1,15.2,7,16,8,16c1,0,1.9-0.8,2-1.8c0.3-0.1,0.7-0.3,1-0.4c0.8,0.7,1.9,0.6,2.7-0.1c0.7-0.7,0.8-1.9,0.1-2.7 c0.2-0.3,0.3-0.6,0.4-1C15.2,9.9,16,9,16,8z M13.4,9c-0.1,0.8-0.5,1.5-0.9,2.1l0.4,0.4c0.4,0.4,0.4,1,0,1.4c-0.4,0.4-1,0.4-1.4,0 l-0.4-0.4C10.5,13,9.8,13.3,9,13.4V14c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1v-0.6c-0.8-0.1-1.5-0.5-2.1-0.9l-0.4,0.4 c-0.4,0.4-1,0.4-1.4,0c-0.4-0.4-0.4-1,0-1.4l0.4-0.4C3,10.5,2.7,9.8,2.6,9H2C1.4,9,1,8.6,1,8c0-0.6,0.4-1,1-1h0.6 C2.7,6.2,3,5.5,3.5,4.9L3.1,4.5c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0l0.4,0.4C5.5,3,6.2,2.7,7,2.6V2c0-0.6,0.4-1,1-1 c0.6,0,1,0.4,1,1v0.6c0.8,0.1,1.5,0.5,2.1,0.9l0.4-0.4c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4l-0.4,0.4C13,5.5,13.3,6.2,13.4,7 H14c0.6,0,1,0.4,1,1c0,0.6-0.4,1-1,1H13.4z" />
+    </svg>
+
+    <svg id="icon-dropdown" viewBox="0 0 18 18">
+        <style>
+            .dd {
+                stroke: #ABADAF;
+                stroke-width: 2px;
+                stroke-dashoffset: 1;
+                stroke-dasharray: inherit
+            }
+        </style>
+        <path class="dd" stroke="#FFF" d="M4.5 4.5l9 9" stroke-linecap="round"></path>
+        <path class="dd" stroke="#FFF" d="M13.5 4.5l-9 9" stroke-linecap="round"></path>
+    </svg>
+
+    <svg id="icon-invite" viewBox="0 0 16 16">
+        <path fill="#fff"
+            d="M6.3,3.4L8,1.7v9.8C8,11.8,8.2,12,8.5,12C8.8,12,9,11.8,9,11.5V1.7l1.7,1.7c0.2,0.2,0.5,0.2,0.7,0c0.2-0.2,0.2-0.5,0-0.7L8.9,0.2c0,0,0,0,0-0.1C8.8,0,8.6,0,8.5,0c0,0,0,0,0,0c0,0,0,0,0,0C8.4,0,8.2,0,8.1,0.1c0,0,0,0,0,0.1L5.6,2.7c-0.2,0.2-0.2,0.5,0,0.7C5.8,3.5,6.1,3.5,6.3,3.4z M14,4h-1.5v1h1C13.8,5,14,5.2,14,5.5v9c0,0.3-0.2,0.5-0.5,0.5h-10C3.2,15,3,14.8,3,14.5v-9C3,5.2,3.2,5,3.5,5h1V4H3C2.4,4,2,4.4,2,5v10c0,0.6,0.4,1,1,1h11c0.6,0,1-0.4,1-1V5C15,4.4,14.6,4,14,4z" />
+    </svg>
+
+    <svg id="icon-channel-settings" viewBox="0 0 16 16">
+        <path fill="#fff"
+            d="M8,5C6.3,5,5,6.3,5,8c0,1.7,1.3,3,3,3c1.7,0,3-1.3,3-3 C11,6.3,9.7,5,8,5z M8,10c-1.1,0-2-0.9-2-2c0-1.1,0.9-2,2-2s2,0.9,2,2C10,9.1,9.1,10,8,10z M16,8c0-1-0.8-1.9-1.8-2 c-0.1-0.3-0.3-0.7-0.4-1c0.7-0.8,0.6-1.9-0.1-2.7c-0.7-0.7-1.9-0.8-2.7-0.1c-0.3-0.2-0.6-0.3-1-0.4C9.9,0.8,9,0,8,0 C7,0,6.1,0.8,6,1.8C5.7,1.9,5.3,2.1,5,2.2C4.2,1.6,3.1,1.6,2.3,2.3C1.6,3.1,1.6,4.2,2.2,5C2.1,5.3,1.9,5.7,1.8,6C0.8,6.1,0,7,0,8 c0,1,0.8,1.9,1.8,2c0.1,0.3,0.3,0.7,0.4,1c-0.7,0.8-0.6,1.9,0.1,2.7c0.7,0.7,1.9,0.8,2.7,0.1c0.3,0.2,0.6,0.3,1,0.4 C6.1,15.2,7,16,8,16c1,0,1.9-0.8,2-1.8c0.3-0.1,0.7-0.3,1-0.4c0.8,0.7,1.9,0.6,2.7-0.1c0.7-0.7,0.8-1.9,0.1-2.7 c0.2-0.3,0.3-0.6,0.4-1C15.2,9.9,16,9,16,8z M13.4,9c-0.1,0.8-0.5,1.5-0.9,2.1l0.4,0.4c0.4,0.4,0.4,1,0,1.4c-0.4,0.4-1,0.4-1.4,0 l-0.4-0.4C10.5,13,9.8,13.3,9,13.4V14c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1v-0.6c-0.8-0.1-1.5-0.5-2.1-0.9l-0.4,0.4 c-0.4,0.4-1,0.4-1.4,0c-0.4-0.4-0.4-1,0-1.4l0.4-0.4C3,10.5,2.7,9.8,2.6,9H2C1.4,9,1,8.6,1,8c0-0.6,0.4-1,1-1h0.6 C2.7,6.2,3,5.5,3.5,4.9L3.1,4.5c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0l0.4,0.4C5.5,3,6.2,2.7,7,2.6V2c0-0.6,0.4-1,1-1 c0.6,0,1,0.4,1,1v0.6c0.8,0.1,1.5,0.5,2.1,0.9l0.4-0.4c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4l-0.4,0.4C13,5.5,13.3,6.2,13.4,7 H14c0.6,0,1,0.4,1,1c0,0.6-0.4,1-1,1H13.4z" />
+    </svg>
+</body>
+
+<!-- Development -->
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+<!-- Production -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-firestore.js"></script>
+<script src="scripts/script.js"></script>
+<script src="scripts/posting.js"></script>
+
+
+</html>
