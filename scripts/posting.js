@@ -112,7 +112,7 @@ function validate() {
         password.focus();
         return false;
     }
-    if (username == "" || password == "" || confirmPassword == "" || email == "") {
+    if (username.value == "" || password.value == "" || confirmPassword.value == "" || email.value == "") {
         return false;
     }
     if (confirmPassword.value.length < 8) {
